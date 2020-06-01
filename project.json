@@ -1,0 +1,155 @@
+{
+  "name": "73-TestAutomationProject",
+  "description": "Test Automation Project",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.Testing.Activities": "[1.0.0]",
+    "UiPath.UIAutomation.Activities": "[20.4.1]",
+    "UiPath.UIAutomationNext.Activities": "[20.4.1]"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.4.1.0",
+  "projectVersion": "1.0.44647642",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Tests",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "ec00e2cb-55ae-44eb-972f-a119e1a2bb46",
+        "fileName": "TestCases\\TC-Loan-VolumeHigh.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "94b6222c-4780-48a5-a4b0-32ea0f09fd0e",
+        "fileName": "TestCases\\TC-Loan-TermLong.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "9237244e-df48-4ef4-abea-7fb853867cfd",
+        "fileName": "TestCases\\TC-Loan-VolumeMedium.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "fa634ebc-3c6b-4f9e-b90d-6a9ac197e762",
+        "fileName": "TestCases\\TC-Loan-TermMid.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "2570e1e7-cd59-48ba-9fcf-b39fe8dab738",
+        "fileName": "TestCases\\TC-Loan-VolumeSmall.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "fe3dd144-f47c-4cd1-9ad1-b4157e6079af",
+        "dataVariationFilePath": ".variations\\Loan Quotes_Loan Quotes.json",
+        "fileName": "TestCases\\TC-Loan-DataDrivenTestCase.xaml"
+      }
+    ]
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "TestCases\\TC-Loan-VolumeHigh.xaml",
+      "uniqueId": "ec00e2cb-55ae-44eb-972f-a119e1a2bb46",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\TC-Loan-TermLong.xaml",
+      "uniqueId": "94b6222c-4780-48a5-a4b0-32ea0f09fd0e",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\TC-Loan-VolumeMedium.xaml",
+      "uniqueId": "9237244e-df48-4ef4-abea-7fb853867cfd",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\TC-Loan-TermMid.xaml",
+      "uniqueId": "fa634ebc-3c6b-4f9e-b90d-6a9ac197e762",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\TC-Loan-VolumeSmall.xaml",
+      "uniqueId": "2570e1e7-cd59-48ba-9fcf-b39fe8dab738",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\TC-Loan-DataDrivenTestCase.xaml",
+      "uniqueId": "fe3dd144-f47c-4cd1-9ad1-b4157e6079af",
+      "input": [
+        {
+          "name": "LoanEmail",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "LoanAmount",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "LoanTerm",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "LoanIncome",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "LoanAge",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "LoanGranted",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "LoanRate",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "Message",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        }
+      ],
+      "output": []
+    }
+  ]
+}
