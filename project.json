@@ -1,17 +1,18 @@
 {
-  "name": "73-TestAutomationProject",
-  "description": "Test Automation Project",
+  "name": "TestAutomationProject",
+  "description": "RPA Testing Project",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[20.4.0]",
-    "UiPath.Testing.Activities": "[1.0.0]",
-    "UiPath.UIAutomation.Activities": "[20.4.1]",
-    "UiPath.UIAutomationNext.Activities": "[20.4.1]"
+    "UiPath.System.Activities": "[20.10.1]",
+    "UiPath.Testing.Activities": "[1.2.4]",
+    "UiPath.UIAutomation.Activities": "[20.10.6]",
+    "UiPath.UIAutomationNext.Activities": "[20.6.0-preview]"
   },
   "webServices": [],
+  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.1.0",
-  "projectVersion": "1.0.44647642",
+  "projectVersion": "1.0.46190015",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -21,7 +22,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -30,74 +33,84 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
+    "processOptions": {
+      "ignoredFiles": []
+    },
     "fileInfoCollection": [
       {
         "editingStatus": "Publishable",
         "testCaseId": "ec00e2cb-55ae-44eb-972f-a119e1a2bb46",
-        "fileName": "TestCases\\TC-Loan-VolumeHigh.xaml"
+        "fileName": "TestCases1\\TC-CreateLoan-VolumeHigh.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "94b6222c-4780-48a5-a4b0-32ea0f09fd0e",
-        "fileName": "TestCases\\TC-Loan-TermLong.xaml"
+        "fileName": "TestCases1\\TC-CreateLoan-TermLong.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "9237244e-df48-4ef4-abea-7fb853867cfd",
-        "fileName": "TestCases\\TC-Loan-VolumeMedium.xaml"
+        "fileName": "TestCases1\\TC-CreateLoan-VolumeMedium.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "fa634ebc-3c6b-4f9e-b90d-6a9ac197e762",
-        "fileName": "TestCases\\TC-Loan-TermMid.xaml"
+        "fileName": "TestCases1\\TC-CreateLoan-TermMid.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "2570e1e7-cd59-48ba-9fcf-b39fe8dab738",
-        "fileName": "TestCases\\TC-Loan-VolumeSmall.xaml"
+        "fileName": "TestCases1\\TC-CreateLoan-VolumeSmall.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "fe3dd144-f47c-4cd1-9ad1-b4157e6079af",
-        "dataVariationFilePath": ".variations\\Loan Quotes_Loan Quotes.json",
-        "fileName": "TestCases\\TC-Loan-DataDrivenTestCase.xaml"
+        "dataVariationFilePath": ".variations\\LoanQuotes-TestData_Loan Quotes.json",
+        "fileName": "TestCases1\\TC-CreateLoan-DataDrivenTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "be830421-3526-4a55-8671-90fe8384a92c",
+        "dataVariationFilePath": ".variations\\LoanQuotes-CoverageCases-TestData_LoanCases_1.json",
+        "fileName": "TestCases2\\TC-CreateLoanCases-DataDriven.xaml"
       }
-    ]
+    ],
+    "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "TestCases\\TC-Loan-VolumeHigh.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-VolumeHigh.xaml",
       "uniqueId": "ec00e2cb-55ae-44eb-972f-a119e1a2bb46",
       "input": [],
       "output": []
     },
     {
-      "filePath": "TestCases\\TC-Loan-TermLong.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-TermLong.xaml",
       "uniqueId": "94b6222c-4780-48a5-a4b0-32ea0f09fd0e",
       "input": [],
       "output": []
     },
     {
-      "filePath": "TestCases\\TC-Loan-VolumeMedium.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-VolumeMedium.xaml",
       "uniqueId": "9237244e-df48-4ef4-abea-7fb853867cfd",
       "input": [],
       "output": []
     },
     {
-      "filePath": "TestCases\\TC-Loan-TermMid.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-TermMid.xaml",
       "uniqueId": "fa634ebc-3c6b-4f9e-b90d-6a9ac197e762",
       "input": [],
       "output": []
     },
     {
-      "filePath": "TestCases\\TC-Loan-VolumeSmall.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-VolumeSmall.xaml",
       "uniqueId": "2570e1e7-cd59-48ba-9fcf-b39fe8dab738",
       "input": [],
       "output": []
     },
     {
-      "filePath": "TestCases\\TC-Loan-DataDrivenTestCase.xaml",
+      "filePath": "TestCases1\\TC-CreateLoan-DataDrivenTestCase.xaml",
       "uniqueId": "fe3dd144-f47c-4cd1-9ad1-b4157e6079af",
       "input": [
         {
@@ -151,5 +164,8 @@
       ],
       "output": []
     }
-  ]
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }

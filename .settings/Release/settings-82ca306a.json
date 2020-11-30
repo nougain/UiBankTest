@@ -1,0 +1,4 @@
+{
+  "UiPath.Testing.Activities.Generic.KeepScreenshots": "True",
+  "UiPath.Testing.Activities.Generic.ScreenshotsPath": "D:\\Work\\RPA\\01 UiPath\\Projects-UiPath\\53-TestAutomationProject (WIP)\\outputs\\ScreenshotsByTestCaseExecutions"
+}

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1186,1160" sap2010:WorkflowViewState.IdRef="TestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1155,1160" sap2010:WorkflowViewState.IdRef="TestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,9 +42,13 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_Loan_TermMid" sap:VirtualizedContainerService.HintSize="518,995" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="TC_Loan_TermMid" sap:VirtualizedContainerService.HintSize="518,849" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="LoanEmail" />
       <Variable x:TypeArguments="x:String" Name="LoanAmount" />
@@ -53,6 +57,8 @@
       <Variable x:TypeArguments="x:String" Name="LoanAge" />
       <Variable x:TypeArguments="x:String" Name="ReceivedLoanRate" />
       <Variable x:TypeArguments="x:String" Name="ExpectedRateValue" />
+      <Variable x:TypeArguments="x:String" Name="LoanID" />
+      <Variable x:TypeArguments="x:String" Name="Message" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -128,35 +134,39 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateLoan workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CreateLoan.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanEmail">[LoanEmail]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanAmount">[LoanAmount]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanTerm">[LoanTerm]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanIncome">[LoanIncome]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanAge">[LoanAge]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanEmail">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanEmail" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanAmount">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanAmount" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanTerm">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanTerm" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanIncome">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanIncome" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanAge">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanAge" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="LoanID">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="LoanID" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="LoanAPR">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ReceivedLoanRate" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="Message">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Message" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="476,299" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="476,153" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Result" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
-        <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d4fced44-c678-4526-8381-e5be127a45d9" InformativeScreenshot="12fe26fb4fed876d3b51831e2474064b" Selector="&lt;html app='chrome.exe' title='UiBank' /&gt;&lt;webctrl id='rateValue' tag='SPAN' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
-            <ui:Target.WaitForReady>
-              <InArgument x:TypeArguments="ui:WaitForReady" />
-            </ui:Target.WaitForReady>
-          </ui:Target>
-        </ui:GetValue.Target>
-        <ui:GetValue.Value>
-          <OutArgument x:TypeArguments="x:String">[ReceivedLoanRate]</OutArgument>
-        </ui:GetValue.Value>
-      </ui:GetValue>
       <uta:VerifyExpression ContinueOnFailure="True" DisplayName="Verify Expression" Expression="[ReceivedLoanRate = ExpectedRateValue]" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" />
     </Sequence>
   </Sequence>
